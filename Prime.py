@@ -1,5 +1,16 @@
-import random
+import random, math # Для работы с классом Primes
+import time # Для работы с классом Profiler
 
+
+class Profiler():
+    def __enter__(self):
+        self._startTime = time.time()
+         
+    def __exit__(self, type, value, traceback):
+        print "Elapsed time: {:.3f} sec".format(time.time() - self._startTime)
+
+class Primes()
+        
 # НОД чисел a и b
 def gcd(a,b):
     if b==0:
@@ -51,11 +62,9 @@ def bruteprime(n):
         return True
 
 
-# Проверка на простоту (Ферма плюс перебор)
-def prime(n):
-    if not ferma(n):
-        return False
-    return bruteprime(n)
+# Проверка на простоту по теореме Вильсона
+def wilson(n):
+    return not (math.factorial(n - 1) + 1) % n
 
 
-
+print(wilson(7))
