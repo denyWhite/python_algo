@@ -4,24 +4,24 @@ import random, math
 class Primes():
     # НОД чисел a и b
     def gcd(self, a, b):
-        if b==0:
+        if b == 0:
             return a
         return self.gcd(b, a % b)
 
     # Умножение a на b по модулю m
     def mul(self, a, b, m):
-        if b==1:
+        if b == 1:
             return a
-        if b%2==0:
+        if b % 2 == 0:
             t = self.mul(a, b/2, m)
             return 2*t % m
         return (self.mul(a, b-1,m) + a) % m
 
     # Возведение a в степень b по модулю m
     def pows(self, a, b, m):
-        if b==0:
+        if b == 0:
             return 1;
-        if b%2==0:
+        if b % 2 == 0:
             t = self.pows(a, b/2, m)
             return self.mul(t, t, m) % m
         return self.mul(self.pows(a, b-1, m), a, m) % m
@@ -42,7 +42,7 @@ class Primes():
         return True
 
     # Проверка на простоту перебором
-    def bruteprime(self, n):
+    def brute(self, n):
         for i in range(2, int(n ** .5)):
             if n%i == 0:
                 return False
@@ -58,5 +58,5 @@ if __name__ == '__main__':
     pr = Primes()
     pflr = Profiler()
     pflr.start()
-    print(pr.wilson(1340712))
+    print(pr.brute(14353453545434071234353453454723131124327))
     pflr.finish()
