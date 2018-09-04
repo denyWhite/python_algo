@@ -36,7 +36,6 @@ def ferma(n, cnt=100):
     """"Проверка на простоту тестом Ферма
         https://ru.wikipedia.org/wiki/Тест_Ферма
         Работает медленнее, чем перебор"""
-    return False
     if n == 2:
         return True
     if n < 2:
