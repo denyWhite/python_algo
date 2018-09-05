@@ -16,6 +16,8 @@ class Profiler:
     def finish(self, rtrn=False):
         """Конец измерения"""
         if rtrn:
-            return format(time.time() - self._startTime)
+            rt =  format(time.time() - self._startTime)
+            self._startTime = time.time()
         else:
             print("Elapsed time: {:.3f} sec".format(time.time() - self._startTime))
+            self._startTime = time.time()
