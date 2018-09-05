@@ -18,7 +18,7 @@ def lcm(a, b):
     """НОК чисел a и b
         :return: int
         """
-    return int(math.fabs(a * b) / gcd(a, b))
+    return math.fabs(a * b) // gcd(a, b)
 
 
 def multiply(a, b, m):
@@ -196,7 +196,7 @@ def primfacs(n, as_dict=False):
     while i * i <= n:
         while n % i == 0:
             pfac.append(i)
-            n = int(n / i)
+            n = n // i
         i = i + 1
     if n > 1:
         pfac.append(n)
@@ -220,7 +220,7 @@ def mult_count_bad(n):
     if n == 1:
         return 1
     cnt = 2
-    for i in range(2, int(n/2) + 1):
+    for i in range(2, n//2 + 1):
         if n % i == 0:
             cnt += 1
     return cnt
@@ -292,4 +292,3 @@ if __name__ == '__main__':
     print(mult_count_bad(15432100))
     prflr.finish()
     """
-
