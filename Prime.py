@@ -138,6 +138,30 @@ def habr_prime(n):
             lst.append(i)
     return lst
 
+def n_prime(n):
+    """
+    Модификация предыдущего алгоритма для получения n-го простого числа
+    n_prime(1) - 2
+    n_prime(7) - 17
+    :param n: Порядковый номер простого числа
+    :return: Просто число с данным порядковым номером
+    """
+    lst = [2]
+    i = 3
+    while len(lst) < n:
+        if (i > 10) and (i % 10 == 5):
+            i += 2
+            continue
+        for j in lst:
+            if j * j - 1 > i:
+                lst.append(i)
+                break
+            if i % j == 0:
+                break
+        else:
+            lst.append(i)
+        i += 2
+    return lst[-1]
 
 def sieve_of_eatosthenes(n):
     """
@@ -247,6 +271,13 @@ if __name__ == '__main__':
     """
 
     """
+    # Пример нахождения n-го простого числа
+    prflr.start()
+    print(n_prime(15000))
+    prflr.finish()
+    """
+
+    """
     # Пример факторизации    
     prflr.start()
     print(primfacs(100000204500456600, True))
@@ -261,3 +292,4 @@ if __name__ == '__main__':
     print(mult_count_bad(15432100))
     prflr.finish()
     """
+
