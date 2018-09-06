@@ -307,7 +307,7 @@ def divider_sum_and_count(n):
     """
     Объединение предыдущих двух функция
     :param n: Число
-    :return: кортеж (кол-во пол. делителей и сумма полож. делителей)
+    :return: кортеж (кол-во сумма полож. делителей и их колво)
     """
     pw = factorization(n, True)
     sm: int = 1
@@ -330,81 +330,3 @@ def euler(n):
         if gcd(n, k) == 1:
             amount += 1
     return amount
-
-
-if __name__ == '__main__':
-    """
-    from Profiler import Profiler
-    prflr = Profiler()
-    # Пример нахождения НОД и НОК
-    print(gcd(45,27))
-    print(lcm(45,27))
-
-
-
-    # Умножения по модулю и возведения в степень по модулю
-    prflr.start()
-    print(powers_m(10, 999999, 3))
-    prflr.finish()
-    print((10 ** 999999) % 3)
-    prflr.finish()
-
-
-
-    # Пример проверки на простоту
-    prflr.start()
-    for num in range(30000, 30999):
-        if not (is_prime_brute2(num) == is_prime_ferma(num) == is_prime_willson(num)):
-            print(num, is_prime_brute2(num), is_prime_ferma(num), is_prime_willson(num))
-    prflr.finish()
-
-    for num in range(30000, 180999):
-        is_prime_brute(num)
-    prflr.finish()
-
-    for num in range(30000, 180999):
-        is_prime_brute2(num)
-    prflr.finish()
-
-    for num in range(30000, 30999):
-        is_prime_ferma(num)
-    prflr.finish()
-
-    for num in range(30000, 30999):
-        is_prime_willson(num)
-    prflr.finish()
-
-
-
-    # Пример генерации простых чисел
-    prflr.start()
-    print([i for i in prime_generator_willson(1000, 100)])
-    prflr.finish()
-    print(prime_interval_habr(1000))
-    prflr.finish()
-    print(sieve_of_eatosthenes(1000))
-    prflr.finish()
-
-
-
-    # Пример нахождения n-го простого числа
-    prflr.start()
-    print(get_n_prime(15000))
-    prflr.finish()
-
-
-
-    # Пример факторизации    
-    prflr.start()
-    print(factorization(100000204500456600, True))
-    prflr.finish()
-
-
-
-    # Пример нахождения колличества делителей
-    prflr.start()
-    print(divider_count(15432100))
-    prflr.finish()
-    print(divider_count_bad(15432100))
-    prflr.finish()
-    """
